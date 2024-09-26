@@ -70,7 +70,7 @@ object FirebaseService {
         }
     }
 
-    suspend fun getData(id: String): Response<DataEntity, Error> {
+    suspend fun getDataById(id: String): Response<DataEntity, Error> {
         val uid = auth.currentUser?.uid
         if (uid != null) {
             val query = db.reference.child(DATA_PATH).child(uid).child(id)
